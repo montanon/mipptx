@@ -1,0 +1,34 @@
+[project]
+name = "mipptx"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11.7",
+    "pytest>=8.4.1",
+    "python-pptx>=1.0.2",
+]
+
+[project.scripts]
+mipptx = "mipptx.main:main"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["mipptx"]
+
+[tool.hatch.build]
+include = [
+    "mipptx/**/*.py",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "mipptx/**/*.py",
+]
